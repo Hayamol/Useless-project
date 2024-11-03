@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta http-equip="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laughing Emoji Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        #content, #revealButton2, #revealButton3 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="revealButton1" onclick="showNextButton(1)" style="font-size: 25px; background-color: lightgrey; color: black; border-width: 25px;">
+        Here is a surprise for you,Click Here
+    </button>
+
+    
+    <button id="revealButton2" onclick="showNextButton(2)" style="font-size: 25px; background-color: lightgrey; color: black; border-width: 25px;">
+        Wait, Wait, Don't Go! Click Here
+    </button> 
+
+
+    <button id="revealButton3" onclick="showNextButton(3)" style="font-size: 25px; background-color: lightgrey; color: black; border-width: 25px;">
+        One Last Time, Click Here Please
+    </button>
+
+
+    <div id="content">
+        <p>laugh</p>
+        <audio id="audio" loop>
+            <source src="laugh.mp3" type="audio/mp3">
+        </audio>
+        <div class="laugh">
+            <div class="face">
+                <div class="eyes"></div>
+                <div class="mouth">
+                    <div class="tongue"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showNextButton(buttonNumber) {
+            if (buttonNumber === 1) {
+                
+                document.getElementById('revealButton1').style.display = 'none';
+                document.getElementById('revealButton2').style.display = 'block';
+            } else if (buttonNumber === 2) {
+                
+                document.getElementById('revealButton2').style.display = 'none';
+                document.getElementById('revealButton3').style.display = 'block';
+            } else if (buttonNumber === 3) {
+                
+                document.getElementById('revealButton3').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+                
+                const audio = document.getElementById('audio');
+                audio.play();
+
+            
+                setTimeout(() => {
+                    audio.pause();
+                    audio.currentTime = 0; 
+                }, 6000); 
+            }
+        }
+    </script>
+</body>
+</html>

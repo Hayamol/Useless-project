@@ -1,0 +1,118 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.laugh{
+    height:150px;
+    width:150px;
+    background-color: #fbba08;
+    border-radius:50%;
+    box-shadow:0 0 7px rgba(0,0,0,0.5);
+    animation: move 1s linear infinite;
+}
+@keyframes move {
+    10%,30%,50%{
+        transform: translateY(25px);
+    }
+    20%,40%{
+        transform: translateY(15px);
+    }
+    60%,80%{
+        transform: translateY(0px);
+    }
+    70%,90%{
+        transform: translateY(-10px);
+    }
+}
+}
+.face{
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    animation: laugh 2s linear infinite;
+}
+@keyframes laugh {
+    10%,30%,50%{
+       transform: translateY(25px); 
+    }
+    20%,40%{
+        transform: translateY(15px); 
+     }
+     60%,80%{
+        transform: translateY(0px); 
+     }
+     70%,90%{
+        transform: translateY(-10px); 
+     }
+}
+.eyes{
+    position: absolute;
+    height: 6px;
+    width: 30px;
+    background-color: transparent;
+    top: 50px;
+    left: 60px;
+    border-radius: 2px;
+    box-shadow: -26px 5px 0 0 #000,
+                26px 5px 0 0 #000 ;
+                transform: rotate(20deg);
+}
+.eyes::after{
+    content:'';
+    position: absolute;
+    height: 6px;
+    width: 30px;
+    background-color: transparent; 
+    border-radius: 2px;
+    box-shadow: -26px 5px 0 0 #000,
+                26px 5px 0 0 #000 ;
+                transform: rotate(-48deg);
+}
+.mouth{
+    position: absolute;
+    height: 40px;
+    width: 75px;
+    top: 60%;
+    left: 25%;
+    background: #000;
+    border-radius: 0 0 50px 50px;
+    overflow: hidden;
+    animation: mouth 2s linear infinite;
+}
+@keyframes mouth {
+    10%,30%,50%{
+        transform: scale(0.6);
+        top: 45%; 
+     }
+     20%,40%{
+        transform: scale(0.8);
+        top: 45%;  
+      }
+      60%,80%{
+        transform: scale(1);
+        top: 50%;  
+      }
+      70%{
+        transform: scale(1.2);
+        top: 50%; 
+      }
+      90%{
+        transform: scale(1.1);
+        top: 50%; 
+      }
+}
+.tongue{
+    position: absolute;
+    height: 30px;
+    width: 70px;
+    background: #f55064;
+    left: 5px;
+    bottom: -10px;
+}
